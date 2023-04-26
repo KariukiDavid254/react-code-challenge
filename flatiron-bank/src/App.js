@@ -5,14 +5,14 @@ function TransactionTable() {
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3003/transactions")
+    fetch("https://my-json-server.typicode.com/KariukiDavid254/react-code-challenge/transactions")
       .then((res) => res.json())
       .then((transactions) => setTransactions(transactions));
   }, []);
 
   // deleting functionality
   const handleDelete = (id) => {
-    fetch(`http://localhost:3003/transactions/${id}`, {
+    fetch(`https://my-json-server.typicode.com/KariukiDavid254/react-code-challenge/transactions/${id}`, {
       method: 'DELETE'
     })
     .then(res => res.json())
